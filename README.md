@@ -27,7 +27,7 @@ http://127.0.0.1:8000
 ```shell
 # Access the web container
 
-docker exec -it django-docker-web-1 /bin/bash
+docker exec -it geodjango-docker-web-1 /bin/bash
 
 # Access the python shell
 
