@@ -26,6 +26,8 @@ function update_db_config() {
 
 docker exec -i geodjango-docker-web-1 sed -i "1s/^/import os\n/" geodjango_project/settings.py
 
+# docker exec -i geodjango-docker-web-1 sed -i "/Django settings for geodjango_project project\./a\import os" geodjango_project/settings.py
+
 ## Step 3.3: Call the function to update the database configuration
 
 update_db_config "geodjango_project/settings.py"
@@ -36,7 +38,7 @@ docker exec -i geodjango-docker-web-1 sed -i "s|TIME_ZONE = 'UTC'|TIME_ZONE = '$
 
 # Step 5: Add django.contrib.gis to INSTALLED_APPS
 
-docker exec -i geodjango-docker-web-1 sed -i "/'django.contrib.gis'," geodjango_project/settings.py
+docker exec -i geodjango-docker-web-1 sed -i "/^INSTALLED_APPS = \[/a\ \t'django.contrib.gis'," geodjango_project/settings.py
 
 # Step 6: Make & apply migrations
 
