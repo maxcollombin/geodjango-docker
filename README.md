@@ -5,7 +5,7 @@
 `cp .env.example .env`
 ## 2. Build the image and start the container
 
-`source .env && ./start.sh`
+`./start.sh`
 
 ## 3. Create the application
 
